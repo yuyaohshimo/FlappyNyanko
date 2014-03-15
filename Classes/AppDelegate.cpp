@@ -56,7 +56,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     ccNodeLoaderLibrary->registerCCNodeLoader("GameLayer", GameLayerLoader::loader());
     CCBReader* ccbReader = new CCBReader(ccNodeLoaderLibrary);
     CCNode* node = ccbReader->readNodeGraphFromFile("GameLayer.ccbi");
-    ((GameLayer*)node)->setAnimationManager(ccbReader->getAnimationManager());
+	((GameLayer*)node)->setTouchEnabled(true);
     
     // シーンを用意し、ゲーム画面を設置する
     CCScene* pScene = CCScene::create();

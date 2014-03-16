@@ -18,10 +18,12 @@ protected:
 	float isJump;
 private:
 	CCSprite* cat;
+	CCSpriteBatchNode* pipeBatch;
 	
 	virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
 	
-	void fallCat();
+	void fallCat(float delta);
+	void setPipe();
 	void movePipe();
 	
 public:
@@ -32,8 +34,6 @@ public:
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(GameLayer, create);
 	
 	bool init();
-	
-	void timer(float delta);
 	
 	void ccTouchesBegan(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
 	
